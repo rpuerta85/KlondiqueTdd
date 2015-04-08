@@ -24,7 +24,7 @@ public class StartGameController {
 		return 24;
 	}
 
-	public ArrayList<Integer> sizeCoveredCardsTableaus() {
+	public ArrayList<Stack<Card>> sizeCoveredCardsTableaus() {
 		// TODO Auto-generated method stub
 		return null;
 	}

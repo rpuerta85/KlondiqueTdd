@@ -47,20 +47,20 @@ public class StartGameControllerTest {
 	
 	@Test
 	public void sizeTableausTest() {
-		ArrayList<Integer> sizeTableaus = startGameController.sizeCoveredCardsTableaus();
+		ArrayList<Stack<Card>> coveredCardsStackTableaus = startGameController.sizeCoveredCardsTableaus();
 		ArrayList<Stack<Card>> uncoveredCardsStackTableaus = startGameController.uncoveredCardsStackTableaus();//array de pilas de cartas descubiertas
 
 		
-		assertEquals(7,sizeTableaus.size());
+		assertEquals(7,coveredCardsStackTableaus.size());
 		assertEquals(7,uncoveredCardsStackTableaus.size());
-		for(int i = 0; i< sizeTableaus.size();i++) {
-			assertEquals(new Integer(i+1),sizeTableaus.get(i));
+		//comprobamos cada pila de cartas cubiertas
+		for(int i = 0; i< coveredCardsStackTableaus.size();i++) {
+			assertEquals(new Integer(i+1).intValue(),coveredCardsStackTableaus.get(i).size());
 		}
+		//comprobamos cada pila de cartas descubiertas
 		for(Stack<Card> uncoveredCardsStack : uncoveredCardsStackTableaus) {
 			assertEquals(1,uncoveredCardsStack.size());
 			assertTrue(uncoveredCardsStack.peek().uncovered());
-			
-			
 		}
 		
 	}
