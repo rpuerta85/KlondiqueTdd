@@ -42,9 +42,7 @@ public class StartGameControllerTest {
 	
 	@Test
 	public void sizeDeckTest() {
-		
 			assertEquals(24,startGameController.sizeDeck());
-		
 	}
 	
 	@Test
@@ -60,6 +58,7 @@ public class StartGameControllerTest {
 		for(Stack<Card> uncoveredCardsStack : uncoveredCardsStackTableaus) {
 			assertEquals(1,uncoveredCardsStack.size());
 			assertTrue(uncoveredCardsStack.peek().uncovered());
+			
 			
 		}
 		
