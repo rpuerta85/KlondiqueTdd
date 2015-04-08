@@ -1,7 +1,9 @@
-package klondique;
+package controllers;
 
 import java.util.ArrayList;
 import java.util.Stack;
+
+import models.Card;
 
 public class StartGameController {
 

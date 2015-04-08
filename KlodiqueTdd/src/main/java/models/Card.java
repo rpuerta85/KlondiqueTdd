@@ -1,4 +1,4 @@
-package klondique;
+package models;
 
 public class Card {
 
