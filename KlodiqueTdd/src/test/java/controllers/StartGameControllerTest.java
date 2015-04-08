@@ -50,6 +50,7 @@ public class StartGameControllerTest {
 		ArrayList<Integer> sizeTableaus = startGameController.sizeCoveredCardsTableaus();
 		ArrayList<Stack<Card>> uncoveredCardsStackTableaus = startGameController.uncoveredCardsStackTableaus();//array de pilas de cartas descubiertas
 
+		
 		assertEquals(7,sizeTableaus.size());
 		assertEquals(7,uncoveredCardsStackTableaus.size());
 		for(int i = 0; i< sizeTableaus.size();i++) {
