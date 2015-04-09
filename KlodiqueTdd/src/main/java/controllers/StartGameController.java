@@ -11,7 +11,8 @@ public class StartGameController {
 
 
 	public int sizeWaste() {
-		return 0;
+		Stack<Card> waste = new Stack<Card>();
+		return waste.size();
 	}
 
 	public ArrayList<Integer> sizeFoundation() {
