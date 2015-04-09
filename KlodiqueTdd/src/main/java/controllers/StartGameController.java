@@ -25,13 +25,18 @@ public class StartGameController {
 
 	public ArrayList<Stack<Card>> sizeCoveredCardsTableaus() {
 		ArrayList<Stack<Card>> coveredCardsStackTableaus = new ArrayList<Stack<Card>>();
-		for (int i = 0;)
+		for (int i = 0;i<7;i++){
+			coveredCardsStackTableaus.add(new Stack<Card>());
+		}
 		return coveredCardsStackTableaus;
 	}
 
 	
 	public ArrayList<Stack<Card>> uncoveredCardsStackTableaus() {
-		ArrayList<Stack<Card>> uncoveredCardsStackTableaus = new ArrayList<Stack<Card>>(7);
+		ArrayList<Stack<Card>> uncoveredCardsStackTableaus = new ArrayList<Stack<Card>>();
+		for (int i = 0;i<7;i++){
+			uncoveredCardsStackTableaus.add(new Stack<Card>());
+		}
 		return uncoveredCardsStackTableaus;
 	}
 
