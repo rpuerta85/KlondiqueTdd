@@ -24,7 +24,6 @@ public class StartGameControllerTest {
 		startGameController = new StartGameController();
 	}
 	
-	
 	@Test
 	public void sizeWasteTest() {
 		assertEquals(0,startGameController.sizeWaste()); 
