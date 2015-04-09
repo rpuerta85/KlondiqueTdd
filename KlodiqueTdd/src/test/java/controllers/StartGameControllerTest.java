@@ -36,10 +36,6 @@ public class StartGameControllerTest {
 		
 	}
 	
-	
-	
-	
-	
 	@Test
 	public void sizeDeckTest() {
 			assertEquals(24,startGameController.sizeDeck());
