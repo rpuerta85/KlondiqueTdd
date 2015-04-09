@@ -39,7 +39,7 @@ public class StartGameControllerTest {
 	
 	@Test
 	public void sizeFullDeckTest(){
-		assertEquals(52,startGameController.deck.size());
+		assertEquals(52,startGameController.getDeck().getDeck().size());
 		
 	}
 	
