@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 import models.Card;
-import models.Deck;
 
 public class StartGameController {
 
-	private Deck deck;
+	//private Deck deck;
 
 
 	public int sizeWaste() {
@@ -24,8 +23,13 @@ public class StartGameController {
 	}
 
 	public int sizeDeck() {
-		deck = new Deck();
-		return deck.getSize();
+		ArrayList<Stack<Card>> deckCardsStack = new ArrayList<Stack<Card>>();
+		for (int i = 0;i<24;i++){
+			deckCardsStack.add(new Stack<Card>());
+			deckCardsStack.get(i).add(new Card(false));
+		}
+		
+		return deckCardsStack.get(0).size();
 	}
 
 	public ArrayList<Stack<Card>> sizeCoveredCardsTableaus() {
@@ -48,10 +52,6 @@ public class StartGameController {
 			uncoveredCardsStackTableaus.get(i).push(new Card(true));
 		}
 		return uncoveredCardsStackTableaus;
-	}
-
-	public Deck getDeck() {
-		return deck;
 	}
 	
 
