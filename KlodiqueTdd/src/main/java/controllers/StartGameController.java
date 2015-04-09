@@ -9,6 +9,7 @@ public class StartGameController {
 
 	private static final int FOUNDATIONS = 4;
 	private static final int NUM_CARDS_IN_DECK = 24;
+	
 	private Stack<Card> waste = new Stack<Card>();
 	private ArrayList<Stack<Card>> sizeFoundations = new ArrayList<Stack<Card>>();
 	private Stack<Card> deckCardsStack = new Stack<Card>();
