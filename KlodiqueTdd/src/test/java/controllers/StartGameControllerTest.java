@@ -31,8 +31,8 @@ public class StartGameControllerTest {
 	}
 	@Test
 	public void sizeFoundationTest() {
-		for(int sizeFoundation : startGameController.sizeFoundation()) {
-			assertEquals(0,sizeFoundation);
+		for(Stack<Card> sizeFoundation : startGameController.sizeFoundation()) {
+			assertEquals(0,sizeFoundation.size());
 		}
 		
 	}
