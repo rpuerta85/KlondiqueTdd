@@ -32,6 +32,7 @@ public class StartGameController {
 	}
 
 	
+	
 	public ArrayList<Stack<Card>> uncoveredCardsStackTableaus() {
 		ArrayList<Stack<Card>> uncoveredCardsStackTableaus = new ArrayList<Stack<Card>>();
 		for (int i = 0;i<7;i++){
