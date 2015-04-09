@@ -7,9 +7,9 @@ import models.Card;
 
 public class StartGameController {
 
-	//private Deck deck;
+	private static final int FOUNDATIONS = 4;
 	private Stack<Card> waste = new Stack<Card>();
-
+	
 	
 	public int sizeWaste() {
 		return waste.size();
@@ -17,7 +17,7 @@ public class StartGameController {
 
 	public ArrayList<Integer> sizeFoundation() {
 		ArrayList<Integer> sizeFoundations = new ArrayList<Integer>();
-		for(int i = 0;i<4;i++) {
+		for(int i = 0;i<FOUNDATIONS;i++) {
 			sizeFoundations.add(0);
 		}
 		return sizeFoundations;
