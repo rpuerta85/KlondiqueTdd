@@ -4,8 +4,13 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 import models.Card;
+import models.Deck;
 
 public class StartGameController {
+
+	private Deck deck;
+
+
 
 	public int sizeWaste() {
 		return 0;
@@ -44,5 +49,10 @@ public class StartGameController {
 		}
 		return uncoveredCardsStackTableaus;
 	}
+
+	public Deck getDeck() {
+		return deck;
+	}
+	
 
 }
