@@ -6,7 +6,9 @@ import java.util.List;
 public class Deck {
 	private List<Card> deck = new ArrayList<Card>();
 
-	
-	
+	public List<Card> getDeck() {
+		return deck;
+	}
+
 	
 }
