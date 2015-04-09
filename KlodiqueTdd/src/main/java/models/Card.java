@@ -2,10 +2,21 @@ package models;
 
 public class Card {
 
-	public boolean uncovered() {
-		// TODO Auto-generated method stub
-		return false;
-		
+	private boolean uncovered;
+	
+	
+	public Card(boolean uncovered) {
+		super();
+		this.uncovered = uncovered;
 	}
+	
+	public boolean isUncovered() {
+		return uncovered;
+	}
+	
+	public void setUncovered(boolean uncovered) {
+		this.uncovered = uncovered;
+	}
+
 
 }
