@@ -10,5 +10,9 @@ public class Deck {
 		return deck;
 	}
 
+	public int getSize() {
+		return deck.size();
+	}
+
 	
 }

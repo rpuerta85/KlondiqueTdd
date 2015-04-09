@@ -11,7 +11,6 @@ public class StartGameController {
 	private Deck deck;
 
 
-
 	public int sizeWaste() {
 		return 0;
 	}
@@ -25,7 +24,8 @@ public class StartGameController {
 	}
 
 	public int sizeDeck() {
-		return 24;
+		deck = new Deck();
+		return deck.getSize();
 	}
 
 	public ArrayList<Stack<Card>> sizeCoveredCardsTableaus() {
