@@ -15,6 +15,7 @@ public class StartGameController {
 	private ArrayList<Stack<Card>> sizeFoundations = new ArrayList<Stack<Card>>();
 	private Stack<Card> deckCardsStack = new Stack<Card>();
 	private ArrayList<Stack<Card>> coveredCardsStackTableaus = new ArrayList<Stack<Card>>();
+	private ArrayList<Stack<Card>> uncoveredCardsStackTableaus = new ArrayList<Stack<Card>>();
 
 	public int sizeWaste() {
 		return waste.size();
@@ -45,7 +46,6 @@ public class StartGameController {
 	}
 	
 	public ArrayList<Stack<Card>> uncoveredCardsStackTableaus() {
-		ArrayList<Stack<Card>> uncoveredCardsStackTableaus = new ArrayList<Stack<Card>>();
 		for (int i = 0;i<STACKS_OF_COVERED__UNCOVERED_CARDS;i++){
 			uncoveredCardsStackTableaus.add(new Stack<Card>());
 			uncoveredCardsStackTableaus.get(i).push(new Card(true));
