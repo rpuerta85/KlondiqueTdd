@@ -11,6 +11,7 @@ public class StartGameController {
 	private static final int NUM_CARDS_IN_DECK = 24;
 	private Stack<Card> waste = new Stack<Card>();
 	private ArrayList<Stack<Card>> sizeFoundations = new ArrayList<Stack<Card>>();
+	private Stack<Card> deckCardsStack = new Stack<Card>();
 	
 	public int sizeWaste() {
 		return waste.size();
@@ -24,7 +25,6 @@ public class StartGameController {
 	}
 
 	public int sizeDeck() {
-		Stack<Card> deckCardsStack = new Stack<Card>();
 		for (int i = 0;i<NUM_CARDS_IN_DECK;i++){
 			deckCardsStack.add(new Card(false));
 		}
