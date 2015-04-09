@@ -23,13 +23,12 @@ public class StartGameController {
 	}
 
 	public int sizeDeck() {
-		ArrayList<Stack<Card>> deckCardsStack = new ArrayList<Stack<Card>>();
+		Stack<Card> deckCardsStack = new Stack<Card>();
 		for (int i = 0;i<24;i++){
-			deckCardsStack.add(new Stack<Card>());
-			deckCardsStack.get(i).add(new Card(false));
+			deckCardsStack.add(new Card(false));
 		}
 		
-		return deckCardsStack.get(0).size();
+		return deckCardsStack.size();
 	}
 
 	public ArrayList<Stack<Card>> sizeCoveredCardsTableaus() {
