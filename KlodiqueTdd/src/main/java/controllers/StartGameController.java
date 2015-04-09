@@ -10,6 +10,7 @@ public class StartGameController {
 	//private Deck deck;
 	private Stack<Card> waste = new Stack<Card>();
 
+	
 	public int sizeWaste() {
 		return waste.size();
 	}
