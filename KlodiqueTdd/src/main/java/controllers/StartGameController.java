@@ -27,6 +27,9 @@ public class StartGameController {
 		ArrayList<Stack<Card>> coveredCardsStackTableaus = new ArrayList<Stack<Card>>();
 		for (int i = 0;i<7;i++){
 			coveredCardsStackTableaus.add(new Stack<Card>());
+			for(int j =0;j<i;j++){
+				coveredCardsStackTableaus.get(i).push(new Card());
+			}
 		}
 		return coveredCardsStackTableaus;
 	}
