@@ -58,6 +58,7 @@ public class StartGameControllerTest {
 		for(int i = 0; i< coveredCardsStackTableaus.size();i++) {
 			assertEquals(new Integer(i).intValue(),coveredCardsStackTableaus.get(i).size());
 		}
+		
 		//comprobamos cada pila de cartas descubiertas
 		for(Stack<Card> uncoveredCardsStack : uncoveredCardsStackTableaus) {
 			assertEquals(1,uncoveredCardsStack.size());
