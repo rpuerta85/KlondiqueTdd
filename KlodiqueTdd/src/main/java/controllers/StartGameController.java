@@ -9,16 +9,15 @@ public class StartGameController {
 
 	private static final int FOUNDATIONS = 4;
 	private Stack<Card> waste = new Stack<Card>();
-	
+	private ArrayList<Stack<Card>> sizeFoundations = new ArrayList<Stack<Card>>();
 	
 	public int sizeWaste() {
 		return waste.size();
 	}
 
-	public ArrayList<Integer> sizeFoundation() {
-		ArrayList<Integer> sizeFoundations = new ArrayList<Integer>();
+	public ArrayList<Stack<Card>> sizeFoundation() {
 		for(int i = 0;i<FOUNDATIONS;i++) {
-			sizeFoundations.add(0);
+			sizeFoundations.add(new Stack<Card>());
 		}
 		return sizeFoundations;
 	}
