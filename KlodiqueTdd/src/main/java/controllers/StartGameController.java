@@ -27,7 +27,6 @@ public class StartGameController {
 		for (int i = 0;i<24;i++){
 			deckCardsStack.add(new Card(false));
 		}
-		
 		return deckCardsStack.size();
 	}
 
