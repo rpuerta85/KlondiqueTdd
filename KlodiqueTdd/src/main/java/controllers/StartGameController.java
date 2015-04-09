@@ -40,6 +40,7 @@ public class StartGameController {
 		ArrayList<Stack<Card>> uncoveredCardsStackTableaus = new ArrayList<Stack<Card>>();
 		for (int i = 0;i<7;i++){
 			uncoveredCardsStackTableaus.add(new Stack<Card>());
+			uncoveredCardsStackTableaus.get(i).push(new Card());
 		}
 		return uncoveredCardsStackTableaus;
 	}
