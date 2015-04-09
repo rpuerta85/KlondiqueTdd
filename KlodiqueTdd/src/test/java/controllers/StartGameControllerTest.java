@@ -63,6 +63,10 @@ public class StartGameControllerTest {
 	}
 	
 	
+	@Test
+	public void distributeCardsTest() {
+			
+	}
 	
 	
 	
