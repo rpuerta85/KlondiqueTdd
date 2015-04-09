@@ -8,6 +8,7 @@ import models.Card;
 public class StartGameController {
 
 	private static final int FOUNDATIONS = 4;
+	private static final int NUM_CARDS_IN_DECK = 24;
 	private Stack<Card> waste = new Stack<Card>();
 	private ArrayList<Stack<Card>> sizeFoundations = new ArrayList<Stack<Card>>();
 	
@@ -24,7 +25,7 @@ public class StartGameController {
 
 	public int sizeDeck() {
 		Stack<Card> deckCardsStack = new Stack<Card>();
-		for (int i = 0;i<24;i++){
+		for (int i = 0;i<NUM_CARDS_IN_DECK;i++){
 			deckCardsStack.add(new Card(false));
 		}
 		return deckCardsStack.size();
