@@ -8,10 +8,9 @@ import models.Card;
 public class StartGameController {
 
 	//private Deck deck;
-
+	private Stack<Card> waste = new Stack<Card>();
 
 	public int sizeWaste() {
-		Stack<Card> waste = new Stack<Card>();
 		return waste.size();
 	}
 
