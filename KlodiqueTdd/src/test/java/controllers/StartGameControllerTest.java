@@ -41,6 +41,7 @@ public class StartGameControllerTest {
 			assertEquals(24,startGameController.sizeDeck());
 	}
 	
+	
 	@Test
 	public void sizeTableausTest() {
 		ArrayList<Stack<Card>> coveredCardsStackTableaus = startGameController.sizeCoveredCardsTableaus();
