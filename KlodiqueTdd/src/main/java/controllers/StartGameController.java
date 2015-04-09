@@ -28,7 +28,7 @@ public class StartGameController {
 		for (int i = 0;i<7;i++){
 			coveredCardsStackTableaus.add(new Stack<Card>());
 			for(int j =0;j<i;j++){
-				coveredCardsStackTableaus.get(i).push(new Card());
+				coveredCardsStackTableaus.get(i).push(new Card(false));
 			}
 		}
 		return coveredCardsStackTableaus;
@@ -40,7 +40,7 @@ public class StartGameController {
 		ArrayList<Stack<Card>> uncoveredCardsStackTableaus = new ArrayList<Stack<Card>>();
 		for (int i = 0;i<7;i++){
 			uncoveredCardsStackTableaus.add(new Stack<Card>());
-			uncoveredCardsStackTableaus.get(i).push(new Card());
+			uncoveredCardsStackTableaus.get(i).push(new Card(false));
 		}
 		return uncoveredCardsStackTableaus;
 	}
