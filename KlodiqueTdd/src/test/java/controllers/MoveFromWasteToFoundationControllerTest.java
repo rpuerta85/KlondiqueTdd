@@ -32,7 +32,6 @@ public class MoveFromWasteToFoundationControllerTest {
 		
 	}
 	
-	
 	@Test
 	public void moveFromDeckToFoundationControllerTest() {
 		Card card = board.getDeck().pop();
@@ -57,6 +56,6 @@ public class MoveFromWasteToFoundationControllerTest {
 		int foundationindex = 0;
 		moveFromWasteToFoundationController.moveFromWasteToFoundationController(foundationindex);
 	}
-	
+
 	
 }
