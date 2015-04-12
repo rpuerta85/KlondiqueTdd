@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 public class Board {
-	 public static final int STACK_OF_FOUNDATIONS = 4;
-	 public static final int NUM_CARDS_IN_DECK = 24;
-	 public static final int STACKS_OF_COVERED__UNCOVERED_CARDS = 7;
+	  static final int STACK_OF_FOUNDATIONS = 4;
+	  static final int NUM_CARDS_IN_DECK = 24;
+	  static final int STACKS_OF_COVERED__UNCOVERED_CARDS = 7;
 	 public static final int NUM_CARDS = 52;
 	 static final int NUM_CARDS_FOR_FOUNDATION = 13;
 	
