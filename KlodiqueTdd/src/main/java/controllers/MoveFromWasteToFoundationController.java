@@ -23,6 +23,7 @@ public class MoveFromWasteToFoundationController extends KlondiqueController {
 		}
 	}
 	
+	
 	 boolean  isMoveFromWasteToFoundationMovementOK(int foundationIndex ) {
 		 boolean ok = false;
 		 if(board.getWaste().size()!=0){
