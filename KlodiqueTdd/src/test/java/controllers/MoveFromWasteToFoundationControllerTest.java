@@ -41,6 +41,7 @@ public class MoveFromWasteToFoundationControllerTest {
 		int oldWasteSize = board.getWaste().size();
 		int oldFoundationSize = board.getSizeFoundations().get(foundationindex).size();
 		
+		
 		try {
 			moveFromWasteToFoundationController.moveFromWasteToFoundationController(foundationindex);
 		} catch (Exception e) {

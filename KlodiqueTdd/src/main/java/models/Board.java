@@ -46,14 +46,14 @@ public class Board {
 		return waste.size();
 	}
 
-	public ArrayList<Stack<Card>> sizeFoundation() {
+	public ArrayList<Stack<Card>> initSizeFoundation() {
 		for(int i = 0;i<Board.STACK_OF_FOUNDATIONS;i++) {
 			sizeFoundations.add(new Stack<Card>());
 		}
 		return sizeFoundations;
 	}
 
-	public int sizeDeck() {
+	public int initSizeDeck() {
 		for (int i = 0;i<Board.NUM_CARDS_IN_DECK;i++){
 			Card c = deck.peek();
 			c.setUncovered(false);
@@ -62,7 +62,7 @@ public class Board {
 		return deckCardsStack.size();
 	}
 
-	public ArrayList<Stack<Card>> sizeCoveredCardsTableaus() {
+	public ArrayList<Stack<Card>> initSizeCoveredCardsTableaus() {
 		for (int i = 0;i<Board.STACKS_OF_COVERED__UNCOVERED_CARDS;i++){
 			coveredCardsStackTableaus.add(new Stack<Card>());
 			for(int j =0;j<i;j++){
@@ -72,7 +72,7 @@ public class Board {
 		return coveredCardsStackTableaus;
 	}
 	
-	public ArrayList<Stack<Card>> uncoveredCardsStackTableaus() {
+	public ArrayList<Stack<Card>> initUncoveredCardsStackTableaus() {
 		for (int i = 0;i<Board.STACKS_OF_COVERED__UNCOVERED_CARDS;i++){
 			uncoveredCardsStackTableaus.add(new Stack<Card>());
 			Card c = deck.peek();
@@ -83,6 +83,7 @@ public class Board {
 	}
 
 	public Stack<Card> getWaste() {
+		
 		return waste;
 	}
 

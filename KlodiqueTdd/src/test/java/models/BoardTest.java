@@ -39,19 +39,19 @@ public class BoardTest {
 	}
 	@Test
 	public void sizeFoundationTest() {
-		for(Stack<Card> sizeFoundation : board.sizeFoundation()) {
+		for(Stack<Card> sizeFoundation : board.initSizeFoundation()) {
 			assertEquals(0,sizeFoundation.size());
 		}
 	}
 	@Test
 	public void sizeDeckTest() {
-			assertEquals(Board.NUM_CARDS_IN_DECK,board.sizeDeck());
+			assertEquals(Board.NUM_CARDS_IN_DECK,board.initSizeDeck());
 	}
 	
 	@Test
 	public void sizeTableausTest() {
-		ArrayList<Stack<Card>> coveredCardsStackTableaus = board.sizeCoveredCardsTableaus();
-		ArrayList<Stack<Card>> uncoveredCardsStackTableaus = board.uncoveredCardsStackTableaus();//array de pilas de cartas descubiertas
+		ArrayList<Stack<Card>> coveredCardsStackTableaus = board.initSizeCoveredCardsTableaus();
+		ArrayList<Stack<Card>> uncoveredCardsStackTableaus = board.initUncoveredCardsStackTableaus();//array de pilas de cartas descubiertas
 		assertEquals(Board.STACKS_OF_COVERED__UNCOVERED_CARDS,coveredCardsStackTableaus.size());
 		assertEquals(Board.STACKS_OF_COVERED__UNCOVERED_CARDS,uncoveredCardsStackTableaus.size());
 		//comprobamos cada pila de cartas cubiertas

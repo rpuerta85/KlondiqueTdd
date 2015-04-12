@@ -20,10 +20,10 @@ public class StartGameController {
 	}
 	private void initBoard(){
 		board.initDeck();
-		board.sizeFoundation();
-		board.sizeDeck();
-		board.sizeCoveredCardsTableaus();
-		board.uncoveredCardsStackTableaus();
+		board.initSizeFoundation();
+		board.initSizeDeck();
+		board.initSizeCoveredCardsTableaus();
+		board.initUncoveredCardsStackTableaus();
 	}
 	
 	public Board getBoard() {
