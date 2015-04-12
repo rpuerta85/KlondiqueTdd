@@ -3,6 +3,7 @@ package models;
 import java.util.ArrayList;
 import java.util.Stack;
 
+
 public class Board {
 	  static final int STACK_OF_FOUNDATIONS = 4;
 	  static final int NUM_CARDS_IN_DECK = 24;
