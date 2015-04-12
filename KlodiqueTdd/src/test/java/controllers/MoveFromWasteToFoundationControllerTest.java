@@ -21,7 +21,7 @@ public class MoveFromWasteToFoundationControllerTest{
 	@Before
 	public void before() {
 		board = new Board();
-		startGameController = new StartGameController();
+		startGameController = new StartGameController(board);
 		startGameController.startGame();
 		board = startGameController.getBoard();
 		moveFromWasteToFoundationController = new MoveFromWasteToFoundationController(board);

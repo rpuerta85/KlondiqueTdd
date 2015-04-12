@@ -6,13 +6,10 @@ import models.Board;
 import models.Card;
 
 
-public class StartGameController {
-	private Board board;
+public class StartGameController extends KlondiqueController {
 	
-	public StartGameController() {
-		super();
-		board = new Board();
-		//initBoard();
+	public StartGameController(Board board) {
+		super(board);
 	}
 
 	public void startGame(){

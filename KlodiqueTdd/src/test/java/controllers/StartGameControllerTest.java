@@ -10,14 +10,14 @@ import org.junit.Test;
 import controllers.StartGameController;
 
 
-public class StartGameControllerTest {
+public class StartGameControllerTest{
 
 	private StartGameController startGameController;
 	
 	@Before
 	public void before() {
 		//SUT
-		startGameController = new StartGameController();
+		startGameController = new StartGameController(new Board());
 	}
 	@Test
 	public void startGameTest() {
