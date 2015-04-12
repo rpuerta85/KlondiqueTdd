@@ -40,7 +40,45 @@ public class Board {
 		}
 
 	}
+	public int sizeWaste() {
+		return waste.size();
+	}
 
+	public ArrayList<Stack<Card>> sizeFoundation() {
+		for(int i = 0;i<Board.STACK_OF_FOUNDATIONS;i++) {
+			sizeFoundations.add(new Stack<Card>());
+		}
+		return sizeFoundations;
+	}
+
+	public int sizeDeck() {
+		for (int i = 0;i<Board.NUM_CARDS_IN_DECK;i++){
+			Card c = deck.peek();
+			c.setUncovered(false);
+			deckCardsStack.add(c);
+		}
+		return deckCardsStack.size();
+	}
+
+	public ArrayList<Stack<Card>> sizeCoveredCardsTableaus() {
+		for (int i = 0;i<Board.STACKS_OF_COVERED__UNCOVERED_CARDS;i++){
+			coveredCardsStackTableaus.add(new Stack<Card>());
+			for(int j =0;j<i;j++){
+				coveredCardsStackTableaus.get(i).push(deck.peek());
+			}
+		}
+		return coveredCardsStackTableaus;
+	}
+	
+	public ArrayList<Stack<Card>> uncoveredCardsStackTableaus() {
+		for (int i = 0;i<Board.STACKS_OF_COVERED__UNCOVERED_CARDS;i++){
+			uncoveredCardsStackTableaus.add(new Stack<Card>());
+			Card c = deck.peek();
+			c.setUncovered(true);
+			uncoveredCardsStackTableaus.get(i).push(c);
+		}
+		return uncoveredCardsStackTableaus;
+	}
 
 	public Stack<Card> getWaste() {
 		return waste;
