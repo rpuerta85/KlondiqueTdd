@@ -19,6 +19,7 @@ public class StartGameControllerTest{
 		//SUT
 		startGameController = new StartGameController(new Board());
 	}
+	
 	@Test
 	public void startGameTest() {
 		startGameController.startGame();
