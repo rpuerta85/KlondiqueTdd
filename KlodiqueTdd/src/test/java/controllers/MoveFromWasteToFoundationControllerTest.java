@@ -59,5 +59,15 @@ public class MoveFromWasteToFoundationControllerTest{
 		int foundationindex = 0;
 		boolean ok = moveFromWasteToFoundationController.isMoveFromWasteToFoundationMovementOK(foundationindex);
 		assertFalse(ok);
+		
+		Card card = board.getDeck().pop();
+		card.setUncovered(true);
+		board.getWaste().push(card);
+		
+		ok = moveFromWasteToFoundationController.isMoveFromWasteToFoundationMovementOK(foundationindex);
+		assertTrue(ok);
+
+
+		
 	}
 }
