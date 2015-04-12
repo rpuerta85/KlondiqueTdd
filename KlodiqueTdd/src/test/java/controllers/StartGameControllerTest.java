@@ -65,7 +65,7 @@ public class StartGameControllerTest {
 	@Test
 	public void initDeckTest() {
 		//startGameController.initDeck();
-		assertEquals(52,startGameController.getDeck().size());
+		assertEquals(StartGameController.NUM_CARDS,startGameController.getDeck().size());
 
 	}
 	
