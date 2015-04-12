@@ -54,5 +54,10 @@ public class MoveFromWasteToFoundationControllerTest{
 		moveFromWasteToFoundationController.moveFromWasteToFoundationController(foundationindex);
 	}
 
-	
+	@Test
+	public void isMoveFromWasteToFoundationMovementOKTest() {
+		int foundationindex = 0;
+		boolean ok = moveFromWasteToFoundationController.isMoveFromWasteToFoundationMovementOK(foundationindex);
+		assertFalse(ok);
+	}
 }
