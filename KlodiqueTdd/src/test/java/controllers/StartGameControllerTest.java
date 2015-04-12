@@ -62,7 +62,7 @@ public class StartGameControllerTest {
 	}
 	
 	@Test
-	public void distributeCardsTest() {
+	public void initDeckTest() {
 		startGameController.initDeck();
 		assertEquals(52,startGameController.getDeck().size());
 
