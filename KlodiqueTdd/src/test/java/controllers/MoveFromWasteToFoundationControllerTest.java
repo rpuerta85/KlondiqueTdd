@@ -17,6 +17,7 @@ public class MoveFromWasteToFoundationControllerTest{
 	private StartGameController startGameController;
 	private Board board;
 	
+	
 	@Before
 	public void before() {
 		board = new Board();
