@@ -27,7 +27,15 @@ public class StartGameController {
 	};
 	
 	
+	
 	private Stack<Card> deck = new Stack<Card>();
+	
+	
+	public StartGameController() {
+		super();
+		
+		// TODO Auto-generated constructor stub
+	}
 	public void initDeck(){
 		for(int j=0;j<4;j++){
 			for(int i=0;i<13;i++){
@@ -57,7 +65,9 @@ public class StartGameController {
 
 	public int sizeDeck() {
 		for (int i = 0;i<NUM_CARDS_IN_DECK;i++){
-			deckCardsStack.add(new Card(false));
+			Card c = deck.peek();
+			c.setUncovered(false);
+			deckCardsStack.add(/*new Card(false)*/c);
 		}
 		return deckCardsStack.size();
 	}
@@ -66,7 +76,7 @@ public class StartGameController {
 		for (int i = 0;i<STACKS_OF_COVERED__UNCOVERED_CARDS;i++){
 			coveredCardsStackTableaus.add(new Stack<Card>());
 			for(int j =0;j<i;j++){
-				coveredCardsStackTableaus.get(i).push(new Card(false));
+				coveredCardsStackTableaus.get(i).push(/*new Card(false)*/deck.peek());
 			}
 		}
 		return coveredCardsStackTableaus;
@@ -75,7 +85,9 @@ public class StartGameController {
 	public ArrayList<Stack<Card>> uncoveredCardsStackTableaus() {
 		for (int i = 0;i<STACKS_OF_COVERED__UNCOVERED_CARDS;i++){
 			uncoveredCardsStackTableaus.add(new Stack<Card>());
-			uncoveredCardsStackTableaus.get(i).push(new Card(true));
+			Card c = deck.peek();
+			c.setUncovered(true);
+			uncoveredCardsStackTableaus.get(i).push(/*new Card(true)*/c);
 		}
 		return uncoveredCardsStackTableaus;
 	}

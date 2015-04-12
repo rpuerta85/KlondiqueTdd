@@ -22,6 +22,7 @@ public class StartGameControllerTest {
 	public void before() {
 		//SUT
 		startGameController = new StartGameController();
+		startGameController.initDeck();
 	}
 	
 	
@@ -63,7 +64,7 @@ public class StartGameControllerTest {
 	
 	@Test
 	public void initDeckTest() {
-		startGameController.initDeck();
+		//startGameController.initDeck();
 		assertEquals(52,startGameController.getDeck().size());
 
 	}
