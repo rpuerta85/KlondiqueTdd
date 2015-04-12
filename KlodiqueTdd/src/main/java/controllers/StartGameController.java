@@ -13,6 +13,8 @@ public class StartGameController {
 	private static final int STACK_OF_FOUNDATIONS = 4;
 	 static final int NUM_CARDS_IN_DECK = 24;
 	 static final int STACKS_OF_COVERED__UNCOVERED_CARDS = 7;
+	 static final int NUM_CARDS = 52;
+	 static final int NUM_CARDS_FOR_FOUNDATION = 13;
 	
 	private Stack<Card> waste = new Stack<Card>();
 	private ArrayList<Stack<Card>> sizeFoundations = new ArrayList<Stack<Card>>();
@@ -33,12 +35,10 @@ public class StartGameController {
 	
 	public StartGameController() {
 		super();
-		
-		// TODO Auto-generated constructor stub
 	}
 	public void initDeck(){
-		for(int j=0;j<4;j++){
-			for(int i=0;i<13;i++){
+		for(int j=0;j<STACK_OF_FOUNDATIONS;j++){
+			for(int i=0;i<NUM_CARDS_FOR_FOUNDATION;i++){
 				Card card = new Card(false);
 				card.setFoundation(listFoundations[j]);
 				card.setNumber(new Integer(i+1));
