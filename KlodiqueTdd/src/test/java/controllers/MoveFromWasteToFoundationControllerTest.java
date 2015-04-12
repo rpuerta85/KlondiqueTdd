@@ -18,13 +18,20 @@ import controllers.StartGameController;
 public class MoveFromWasteToFoundationControllerTest {
 
 	private MoveFromWasteToFoundationController moveFromWasteToFoundationController;
+	private StartGameController startGameController;
 	private Board board;
 	
 	@Before
 	public void before() {
 		board = new Board();
-		board.initDeck(); 
+		startGameController = new StartGameController();
+		startGameController.startGame();
+		board = startGameController.getBoard();
 		moveFromWasteToFoundationController = new MoveFromWasteToFoundationController(board);
+		Card card = board.getDeck().pop();
+		card.setUncovered(true);
+		board.getWaste().push(card);
+		
 	}
 	
 	
@@ -34,13 +41,12 @@ public class MoveFromWasteToFoundationControllerTest {
 		int oldWasteSize = board.getWaste().size();
 		int oldFoundationSize = board.getSizeFoundations().get(foundationindex).size();
 		
-		Card card = board.getWaste().pop();
 		try {
 			moveFromWasteToFoundationController.moveFromWasteToFoundationController(foundationindex);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		assertEquals(oldWasteSize, board.getWaste().size()-1);
+		assertEquals(oldWasteSize-1, board.getWaste().size());
 		assertEquals(oldFoundationSize+1, board.getSizeFoundations().get(foundationindex).size());
 
 		
