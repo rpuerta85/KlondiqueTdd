@@ -4,8 +4,7 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.Stack;
-
-import junit.framework.Assert;
+import models.Board;
 import models.Card;
 
 import org.junit.Before;
@@ -22,7 +21,6 @@ public class StartGameControllerTest {
 	public void before() {
 		//SUT
 		startGameController = new StartGameController();
-		startGameController.initDeck();
 	}
 	
 	
@@ -38,17 +36,15 @@ public class StartGameControllerTest {
 	}
 	@Test
 	public void sizeDeckTest() {
-			assertEquals(StartGameController.NUM_CARDS_IN_DECK,startGameController.sizeDeck());
+			assertEquals(Board.NUM_CARDS_IN_DECK,startGameController.sizeDeck());
 	}
-	
-	
 	
 	@Test
 	public void sizeTableausTest() {
 		ArrayList<Stack<Card>> coveredCardsStackTableaus = startGameController.sizeCoveredCardsTableaus();
 		ArrayList<Stack<Card>> uncoveredCardsStackTableaus = startGameController.uncoveredCardsStackTableaus();//array de pilas de cartas descubiertas
-		assertEquals(StartGameController.STACKS_OF_COVERED__UNCOVERED_CARDS,coveredCardsStackTableaus.size());
-		assertEquals(StartGameController.STACKS_OF_COVERED__UNCOVERED_CARDS,uncoveredCardsStackTableaus.size());
+		assertEquals(Board.STACKS_OF_COVERED__UNCOVERED_CARDS,coveredCardsStackTableaus.size());
+		assertEquals(Board.STACKS_OF_COVERED__UNCOVERED_CARDS,uncoveredCardsStackTableaus.size());
 		//comprobamos cada pila de cartas cubiertas
 		for(int i = 0; i< coveredCardsStackTableaus.size();i++) {
 			assertEquals(new Integer(i).intValue(),coveredCardsStackTableaus.get(i).size());
@@ -64,9 +60,7 @@ public class StartGameControllerTest {
 	
 	@Test
 	public void initDeckTest() {
-		//startGameController.initDeck();
-		assertEquals(StartGameController.NUM_CARDS,startGameController.getDeck().size());
-
+		assertEquals(Board.NUM_CARDS,startGameController.getBoard().getDeck().size());
 	}
 	
 	

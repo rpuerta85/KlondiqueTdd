@@ -2,119 +2,65 @@ package controllers;
 
 import java.util.ArrayList;
 import java.util.Stack;
-
+import models.Board;
 import models.Card;
-import models.ColorType;
-import models.Foundation;
-import models.FoundationsType;
+
 
 public class StartGameController {
-
-	private static final int STACK_OF_FOUNDATIONS = 4;
-	 static final int NUM_CARDS_IN_DECK = 24;
-	 static final int STACKS_OF_COVERED__UNCOVERED_CARDS = 7;
-	 static final int NUM_CARDS = 52;
-	 static final int NUM_CARDS_FOR_FOUNDATION = 13;
-	
-	private Stack<Card> waste = new Stack<Card>();
-	private ArrayList<Stack<Card>> sizeFoundations = new ArrayList<Stack<Card>>();
-	private Stack<Card> deckCardsStack = new Stack<Card>();
-	private ArrayList<Stack<Card>> coveredCardsStackTableaus = new ArrayList<Stack<Card>>();
-	private ArrayList<Stack<Card>> uncoveredCardsStackTableaus = new ArrayList<Stack<Card>>();
-	
-	private Foundation[] listFoundations = {new Foundation(FoundationsType.DIAMOND, ColorType.RED),
-			new Foundation(FoundationsType.HEART, ColorType.RED),
-			new Foundation(FoundationsType.SPADES, ColorType.BLACK),
-			new Foundation(FoundationsType.CLOVER, ColorType.BLACK)
-	};
-	
-	
-	
-	private Stack<Card> deck = new Stack<Card>();
-	
+	private Board board;
 	
 	public StartGameController() {
 		super();
+		board = new Board();
+		board.initDeck();
 	}
-	public void initDeck(){
-		for(int j=0;j<STACK_OF_FOUNDATIONS;j++){
-			for(int i=0;i<NUM_CARDS_FOR_FOUNDATION;i++){
-				Card card = new Card(false);
-				card.setFoundation(listFoundations[j]);
-				card.setNumber(new Integer(i+1));
-				deck.add(card);
-			}
-			
-			
-		}
-		
-		
-		
-		
-	}
+
 	public int sizeWaste() {
-		return waste.size();
+		return board.getWaste().size();
 	}
 
 	public ArrayList<Stack<Card>> sizeFoundation() {
-		for(int i = 0;i<STACK_OF_FOUNDATIONS;i++) {
-			sizeFoundations.add(new Stack<Card>());
+		for(int i = 0;i<Board.STACK_OF_FOUNDATIONS;i++) {
+			board.getSizeFoundations().add(new Stack<Card>());
 		}
-		return sizeFoundations;
+		return board.getSizeFoundations();
 	}
 
 	public int sizeDeck() {
-		for (int i = 0;i<NUM_CARDS_IN_DECK;i++){
-			Card c = deck.peek();
+		for (int i = 0;i<Board.NUM_CARDS_IN_DECK;i++){
+			Card c = board.getDeck().peek();
 			c.setUncovered(false);
-			deckCardsStack.add(/*new Card(false)*/c);
+			board.getDeckCardsStack().add(c);
 		}
-		return deckCardsStack.size();
+		return board.getDeckCardsStack().size();
 	}
 
 	public ArrayList<Stack<Card>> sizeCoveredCardsTableaus() {
-		for (int i = 0;i<STACKS_OF_COVERED__UNCOVERED_CARDS;i++){
-			coveredCardsStackTableaus.add(new Stack<Card>());
+		for (int i = 0;i<Board.STACKS_OF_COVERED__UNCOVERED_CARDS;i++){
+			board.getCoveredCardsStackTableaus().add(new Stack<Card>());
 			for(int j =0;j<i;j++){
-				coveredCardsStackTableaus.get(i).push(/*new Card(false)*/deck.peek());
+				board.getCoveredCardsStackTableaus().get(i).push(board.getDeck().peek());
 			}
 		}
-		return coveredCardsStackTableaus;
+		return board.getCoveredCardsStackTableaus();
 	}
 	
 	public ArrayList<Stack<Card>> uncoveredCardsStackTableaus() {
-		for (int i = 0;i<STACKS_OF_COVERED__UNCOVERED_CARDS;i++){
-			uncoveredCardsStackTableaus.add(new Stack<Card>());
-			Card c = deck.peek();
+		for (int i = 0;i<Board.STACKS_OF_COVERED__UNCOVERED_CARDS;i++){
+			board.getUncoveredCardsStackTableaus().add(new Stack<Card>());
+			Card c = board.getDeck().peek();
 			c.setUncovered(true);
-			uncoveredCardsStackTableaus.get(i).push(/*new Card(true)*/c);
+			board.getUncoveredCardsStackTableaus().get(i).push(c);
 		}
-		return uncoveredCardsStackTableaus;
-	}
-
-	public Stack<Card> getDeck() {
-		return deck;
+		return board.getUncoveredCardsStackTableaus();
 	}
 
 	
-	public Stack<Card> getWaste() {
-		return waste;
+	public Board getBoard() {
+		return board;
 	}
-
-	public ArrayList<Stack<Card>> getSizeFoundations() {
-		return sizeFoundations;
-	}
-
-	public Stack<Card> getDeckCardsStack() {
-		return deckCardsStack;
-	}
-
-	public ArrayList<Stack<Card>> getCoveredCardsStackTableaus() {
-		return coveredCardsStackTableaus;
-	}
-
-	public ArrayList<Stack<Card>> getUncoveredCardsStackTableaus() {
-		return uncoveredCardsStackTableaus;
+	public void setBoard(Board board) {
+		this.board = board;
 	}
 	
 	
