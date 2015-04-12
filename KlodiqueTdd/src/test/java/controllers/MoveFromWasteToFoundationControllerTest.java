@@ -27,6 +27,7 @@ public class MoveFromWasteToFoundationControllerTest {
 		moveFromWasteToFoundationController = new MoveFromWasteToFoundationController(board);
 	}
 	
+	
 	@Test
 	public void moveFromDeckToFoundationControllerTest() {
 		int foundationindex = 0;
@@ -34,7 +35,11 @@ public class MoveFromWasteToFoundationControllerTest {
 		int oldFoundationSize = board.getSizeFoundations().get(foundationindex).size();
 		
 		Card card = board.getWaste().pop();
-		moveFromWasteToFoundationController.moveFromWasteToFoundationController(card,foundationindex);
+		try {
+			moveFromWasteToFoundationController.moveFromWasteToFoundationController(foundationindex);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		assertEquals(oldWasteSize, board.getWaste().size()-1);
 		assertEquals(oldFoundationSize+1, board.getSizeFoundations().get(foundationindex).size());
 

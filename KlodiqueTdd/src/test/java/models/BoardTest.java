@@ -30,46 +30,41 @@ public class BoardTest {
 		assertEquals(Board.NUM_CARDS,board.getDeck().size());
 	}
 	
-	public int sizeWaste() {
-		return board.getWaste().size();
-	}
 
-	public ArrayList<Stack<Card>> sizeFoundation() {
-		for(int i = 0;i<Board.STACK_OF_FOUNDATIONS;i++) {
-			board.getSizeFoundations().add(new Stack<Card>());
-		}
-		return board.getSizeFoundations();
-	}
-
-	public int sizeDeck() {
-		for (int i = 0;i<Board.NUM_CARDS_IN_DECK;i++){
-			Card c = board.getDeck().peek();
-			c.setUncovered(false);
-			board.getDeckCardsStack().add(c);
-		}
-		return board.getDeckCardsStack().size();
-	}
-
-	public ArrayList<Stack<Card>> sizeCoveredCardsTableaus() {
-		for (int i = 0;i<Board.STACKS_OF_COVERED__UNCOVERED_CARDS;i++){
-			board.getCoveredCardsStackTableaus().add(new Stack<Card>());
-			for(int j =0;j<i;j++){
-				board.getCoveredCardsStackTableaus().get(i).push(board.getDeck().peek());
-			}
-		}
-		return board.getCoveredCardsStackTableaus();
-	}
-	
-	public ArrayList<Stack<Card>> uncoveredCardsStackTableaus() {
-		for (int i = 0;i<Board.STACKS_OF_COVERED__UNCOVERED_CARDS;i++){
-			board.getUncoveredCardsStackTableaus().add(new Stack<Card>());
-			Card c = board.getDeck().peek();
-			c.setUncovered(true);
-			board.getUncoveredCardsStackTableaus().get(i).push(c);
-		}
-		return board.getUncoveredCardsStackTableaus();
-	}
 
 	
-
+	@Test
+	public void sizeWasteTest() {
+		assertEquals(0,board.sizeWaste()); 
+	}
+	@Test
+	public void sizeFoundationTest() {
+		for(Stack<Card> sizeFoundation : board.sizeFoundation()) {
+			assertEquals(0,sizeFoundation.size());
+		}
+	}
+	@Test
+	public void sizeDeckTest() {
+			assertEquals(Board.NUM_CARDS_IN_DECK,board.sizeDeck());
+	}
+	
+	@Test
+	public void sizeTableausTest() {
+		ArrayList<Stack<Card>> coveredCardsStackTableaus = board.sizeCoveredCardsTableaus();
+		ArrayList<Stack<Card>> uncoveredCardsStackTableaus = board.uncoveredCardsStackTableaus();//array de pilas de cartas descubiertas
+		assertEquals(Board.STACKS_OF_COVERED__UNCOVERED_CARDS,coveredCardsStackTableaus.size());
+		assertEquals(Board.STACKS_OF_COVERED__UNCOVERED_CARDS,uncoveredCardsStackTableaus.size());
+		//comprobamos cada pila de cartas cubiertas
+		for(int i = 0; i< coveredCardsStackTableaus.size();i++) {
+			assertEquals(new Integer(i).intValue(),coveredCardsStackTableaus.get(i).size());
+		}
+		
+		//comprobamos cada pila de cartas descubiertas
+		for(Stack<Card> uncoveredCardsStack : uncoveredCardsStackTableaus) {
+			assertEquals(1,uncoveredCardsStack.size());
+			assertTrue(uncoveredCardsStack.peek().isUncovered());
+		}
+		
+	}
+	
 }
