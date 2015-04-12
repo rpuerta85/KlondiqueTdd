@@ -20,8 +20,8 @@ public class StartGameControllerTest {
 		startGameController = new StartGameController();
 	}
 	@Test
-	public void initDeckTest() {
-		startGameController.getBoard().initDeck();
+	public void startGameTest() {
+		startGameController.startGame();
 		assertEquals(Board.NUM_CARDS,startGameController.getBoard().getDeck().size());
 	}
 	
