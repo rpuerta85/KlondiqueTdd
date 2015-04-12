@@ -26,6 +26,7 @@ public class StartGameController {
 			new Foundation(FoundationsType.CLOVER, ColorType.BLACK)
 	};
 	
+	
 	private Stack<Card> deck = new Stack<Card>();
 	public void initDeck(){
 		for(int j=0;j<4;j++){
