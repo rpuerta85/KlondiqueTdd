@@ -35,10 +35,9 @@ public class StartGameControllerTest {
 			assertEquals(0,sizeFoundation.size());
 		}
 	}
-	
 	@Test
 	public void sizeDeckTest() {
-			assertEquals(24,startGameController.sizeDeck());
+			assertEquals(StartGameController.NUM_CARDS_IN_DECK,startGameController.sizeDeck());
 	}
 	
 	
@@ -47,8 +46,8 @@ public class StartGameControllerTest {
 	public void sizeTableausTest() {
 		ArrayList<Stack<Card>> coveredCardsStackTableaus = startGameController.sizeCoveredCardsTableaus();
 		ArrayList<Stack<Card>> uncoveredCardsStackTableaus = startGameController.uncoveredCardsStackTableaus();//array de pilas de cartas descubiertas
-		assertEquals(7,coveredCardsStackTableaus.size());
-		assertEquals(7,uncoveredCardsStackTableaus.size());
+		assertEquals(StartGameController.STACKS_OF_COVERED__UNCOVERED_CARDS,coveredCardsStackTableaus.size());
+		assertEquals(StartGameController.STACKS_OF_COVERED__UNCOVERED_CARDS,uncoveredCardsStackTableaus.size());
 		//comprobamos cada pila de cartas cubiertas
 		for(int i = 0; i< coveredCardsStackTableaus.size();i++) {
 			assertEquals(new Integer(i).intValue(),coveredCardsStackTableaus.get(i).size());
@@ -62,10 +61,11 @@ public class StartGameControllerTest {
 		
 	}
 	
-	aqui me que quedado
 	@Test
 	public void distributeCardsTest() {
-			
+		startGameController.initDeck();
+		assertEquals(52,startGameController.getDeck().size());
+
 	}
 	
 	
