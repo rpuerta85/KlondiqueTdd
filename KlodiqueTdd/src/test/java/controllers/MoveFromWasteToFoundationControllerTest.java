@@ -2,11 +2,7 @@ package controllers;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-import java.util.Stack;
-
 import models.Board;
-import models.BoardTest;
 import models.Card;
 
 import org.junit.Before;
@@ -15,7 +11,7 @@ import org.junit.Test;
 import controllers.StartGameController;
 
 
-public class MoveFromWasteToFoundationControllerTest {
+public class MoveFromWasteToFoundationControllerTest{
 
 	private MoveFromWasteToFoundationController moveFromWasteToFoundationController;
 	private StartGameController startGameController;

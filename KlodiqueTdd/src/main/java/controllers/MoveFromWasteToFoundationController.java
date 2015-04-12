@@ -5,13 +5,10 @@ import java.util.Stack;
 import models.Board;
 import models.Card;
 
-public class MoveFromWasteToFoundationController {
-	
-	private Board board;
+public class MoveFromWasteToFoundationController extends KlondiqueController {
 	
 	public MoveFromWasteToFoundationController(Board board) {
-		super();
-		this.board = board;
+		super(board);
 	}
 
 	public void moveFromWasteToFoundationController(int foundationIndex ) throws Exception {
