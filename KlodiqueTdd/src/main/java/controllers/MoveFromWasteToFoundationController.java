@@ -11,6 +11,7 @@ public class MoveFromWasteToFoundationController extends KlondiqueController {
 		super(board);
 	}
 
+	
 	public void moveFromWasteToFoundationController(int foundationIndex ) throws Exception {
 		Card card = board.getWaste().peek();
 		Stack<Card> foundation = board.getSizeFoundations().get(foundationIndex);
