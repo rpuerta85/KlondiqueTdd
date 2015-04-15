@@ -48,6 +48,7 @@ public class BoardTest {
 			assertEquals(Board.NUM_CARDS_IN_DECK,board.initSizeDeck());
 	}
 	
+	
 	@Test
 	public void sizeTableausTest() {
 		ArrayList<Stack<Card>> coveredCardsStackTableaus = board.initSizeCoveredCardsTableaus();
