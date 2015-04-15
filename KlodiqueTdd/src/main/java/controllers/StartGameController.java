@@ -13,14 +13,7 @@ public class StartGameController extends KlondiqueController {
 	}
 
 	public void startGame(){
-		initBoard();
-	}
-	private void initBoard(){
-		board.initDeck();
-		board.initSizeFoundation();
-		board.initSizeDeck();
-		board.initSizeCoveredCardsTableaus();
-		board.initUncoveredCardsStackTableaus();
+		board.initBoard();
 	}
 	
 	public Board getBoard() {

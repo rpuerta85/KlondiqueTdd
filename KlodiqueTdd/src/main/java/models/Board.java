@@ -24,8 +24,14 @@ public class Board {
 			new Foundation(FoundationsType.SPADES, ColorType.BLACK),
 			new Foundation(FoundationsType.CLOVER, ColorType.BLACK)
 	};
-	
-	
+	public void initBoard(){
+		initDeck();
+		initSizeFoundation();
+		initSizeDeck();
+		initSizeCoveredCardsTableaus();
+		initUncoveredCardsStackTableaus();
+	}
+
 	public void initDeck(){
 		for(int j=0;j<STACK_OF_FOUNDATIONS;j++){
 			for(int i=0;i<Board.NUM_CARDS_FOR_FOUNDATION;i++){
