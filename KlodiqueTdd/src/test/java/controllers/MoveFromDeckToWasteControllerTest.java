@@ -1,7 +1,10 @@
 package controllers;
 
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import models.Board;
+import models.Card;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -23,12 +26,17 @@ public class MoveFromDeckToWasteControllerTest{
 		startGameController.startGame();
 		board = startGameController.getBoard();
 		moveFromDeckToWasteController = new MoveFromDeckToWasteController(board);
-		
-		
 	}
 	
 	@Test
 	public void moveFromDeckToWasteControllerTest() {
+		int oldWasteSize = board.getWaste().size();
+		int oldDeckSize = board.getDeck().size();
+		boolean success = moveFromDeckToWasteController.moveFromDeckToWasteController();
+		assertTrue(success);
+		assertEquals(oldWasteSize+1, board.getWaste().size());
+		assertEquals(oldDeckSize-1, board.getDeck().size());
+		
 		
 	}
 	
