@@ -30,8 +30,8 @@ public class MoveFromWasteToTableauxControllerTest{
 	}
 	
 	@Test
-	public void moveFromWasteToTableauxControllerTest() {
-		
+	public void moveFromWasteToTableauxTest() {
+		assertTrue(moveFromWasteToTableauxController.moveFromWasteToTableaux(1));
 	}
 	
 	

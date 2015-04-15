@@ -8,4 +8,8 @@ public class MoveFromWasteToTableauxController {
 		// TODO Auto-generated constructor stub
 	}
 
+	public boolean moveFromWasteToTableaux(int i) {
+		return false;		
+	}
+
 }
