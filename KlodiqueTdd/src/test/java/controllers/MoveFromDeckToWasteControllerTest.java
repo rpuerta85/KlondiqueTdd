@@ -32,11 +32,15 @@ public class MoveFromDeckToWasteControllerTest{
 	public void moveFromDeckToWasteControllerTest() {
 		int oldWasteSize = board.getWaste().size();
 		int oldDeckSize = board.getDeck().size();
+		
+		try{
 		boolean success = moveFromDeckToWasteController.moveFromDeckToWasteController();
 		assertTrue(success);
 		assertEquals(oldWasteSize+1, board.getWaste().size());
 		assertEquals(oldDeckSize-1, board.getDeck().size());
-		
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		
 	}

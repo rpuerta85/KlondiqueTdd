@@ -1,14 +1,25 @@
 package controllers;
 
 import models.Board;
+import models.Card;
 
-public class MoveFromDeckToWasteController {
+public class MoveFromDeckToWasteController extends KlondiqueController {
 
 	public MoveFromDeckToWasteController(Board board) {
+		super(board);
 	}
 
-	public boolean moveFromDeckToWasteController() {
-		return false;
+	public boolean moveFromDeckToWasteController() throws Exception {
+		boolean ret = false;
+		if(board.getDeck().size()!=0){
+			Card card = board.getDeck().pop();
+			card.setUncovered(true);
+			board.getWaste().push(card);
+			ret = true;
+		}else {
+			throw new Exception("Incorrect movement");
+		}
+		return ret;
 	}
 
 }
