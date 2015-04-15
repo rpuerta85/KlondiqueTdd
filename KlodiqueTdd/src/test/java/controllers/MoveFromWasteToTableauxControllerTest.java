@@ -24,9 +24,7 @@ public class MoveFromWasteToTableauxControllerTest{
 		startGameController.startGame();
 		board = startGameController.getBoard();
 		moveFromWasteToTableauxController = new MoveFromWasteToTableauxController(board);
-		
-		
-		
+
 	}
 	
 	@Test

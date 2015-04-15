@@ -33,7 +33,7 @@ public class MoveFromDeckToWasteControllerTest{
 		int oldWasteSize = board.getWaste().size();
 		int oldDeckSize = board.getDeck().size();
 		try{
-		assertTrue(moveFromDeckToWasteController.moveFromDeckToWasteController());
+		assertTrue(moveFromDeckToWasteController.moveFromDeckToWaste());
 		assertEquals(oldWasteSize+1, board.getWaste().size());
 		assertEquals(oldDeckSize-1, board.getDeck().size());
 		}catch (Exception e) {
@@ -43,7 +43,7 @@ public class MoveFromDeckToWasteControllerTest{
 	@Test(expected = java.lang.Exception.class) 
 	public void moveFromDeckToWasteControllerExceptionTest() throws Exception {
 		board.getDeck().clear();
-		moveFromDeckToWasteController.moveFromDeckToWasteController();
+		moveFromDeckToWasteController.moveFromDeckToWaste();
 	}
 	
 	

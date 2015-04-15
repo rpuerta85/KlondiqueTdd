@@ -10,7 +10,7 @@ public class MoveFromDeckToWasteController extends KlondiqueController {
 	}
 
 	
-	public boolean moveFromDeckToWasteController() throws Exception {
+	public boolean moveFromDeckToWaste() throws Exception {
 		boolean ret = false;
 		if(board.getDeck().size()!=0){
 			Card card = board.getDeck().pop();

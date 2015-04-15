@@ -34,13 +34,13 @@ public class MoveFromWasteToFoundationControllerTest{
 		Card card = board.getDeck().pop();
 		card.setUncovered(true);
 		board.getWaste().push(card);
-		
+		card.setNumber(1);
 		int foundationindex = 0;
 		int oldWasteSize = board.getWaste().size();
 		int oldFoundationSize = board.getSizeFoundations().get(foundationindex).size();
 		
 		try {
-			moveFromWasteToFoundationController.moveFromWasteToFoundationController(foundationindex);
+			moveFromWasteToFoundationController.moveFromWasteToFoundation(foundationindex);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -51,7 +51,7 @@ public class MoveFromWasteToFoundationControllerTest{
 	@Test(expected = java.lang.Exception.class) 
 	public void moveFromDeckToFoundationControllerExceptionTest() throws Exception {
 		int foundationindex = 0;
-		moveFromWasteToFoundationController.moveFromWasteToFoundationController(foundationindex);
+		moveFromWasteToFoundationController.moveFromWasteToFoundation(foundationindex);
 	}
 
 	@Test
@@ -61,6 +61,7 @@ public class MoveFromWasteToFoundationControllerTest{
 		assertFalse(ok);
 		
 		Card card = board.getDeck().pop();
+		card.setNumber(1);
 		card.setUncovered(true);
 		board.getWaste().push(card);
 		
