@@ -26,6 +26,7 @@ public class MoveFromWasteToTableauxControllerTest{
 		moveFromWasteToTableauxController = new MoveFromWasteToTableauxController(board);
 		
 		
+		
 	}
 	
 	@Test
