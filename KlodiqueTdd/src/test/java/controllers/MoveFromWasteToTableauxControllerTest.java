@@ -1,7 +1,6 @@
 package controllers;
 
 import static org.junit.Assert.*;
-
 import models.Board;
 import models.Card;
 
@@ -31,7 +30,12 @@ public class MoveFromWasteToTableauxControllerTest{
 	
 	@Test
 	public void moveFromWasteToTableauxTest() {
-		assertTrue(moveFromWasteToTableauxController.moveFromWasteToTableaux(1));
+		try {
+			assertTrue(moveFromWasteToTableauxController.moveFromWasteToTableaux(1));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	
