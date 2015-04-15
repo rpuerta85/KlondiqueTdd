@@ -38,6 +38,7 @@ public class MoveFromDeckToWasteControllerTest{
 		assertEquals(oldDeckSize-1, board.getDeck().size());
 		
 		
+		
 	}
 	
 	
