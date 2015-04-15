@@ -9,6 +9,7 @@ public class MoveFromDeckToWasteController extends KlondiqueController {
 		super(board);
 	}
 
+	
 	public boolean moveFromDeckToWasteController() throws Exception {
 		boolean ret = false;
 		if(board.getDeck().size()!=0){
