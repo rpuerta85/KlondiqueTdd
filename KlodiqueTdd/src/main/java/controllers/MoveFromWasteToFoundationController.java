@@ -25,12 +25,12 @@ public class MoveFromWasteToFoundationController extends KlondiqueController {
 	
 	 boolean  isMoveFromWasteToFoundationMovementOK(int foundationIndex ) {
 		 boolean ok = false;
-		 if(board.getWaste().size()!=0){
+		 if(!board.getWaste().empty()){
 			 Card card = board.getWaste().peek();
 			 Stack<Card> foundation = board.getSizeFoundations().get(foundationIndex);			
 			 ok = 
-						(foundation.size()==0 && card.getNumber().intValue()==1) || 
-						(foundation.size()!=0 && foundation.peek().getNumber().intValue()==card.getNumber().intValue()-1 && 
+						(foundation.empty() && card.getNumber().intValue()==1) || 
+						(!foundation.empty() && foundation.peek().getNumber().intValue()==card.getNumber().intValue()-1 && 
 						 foundation.peek().getFoundation().getFoundationType()==card.getFoundation().getFoundationType());
 		 }
 		 return ok;

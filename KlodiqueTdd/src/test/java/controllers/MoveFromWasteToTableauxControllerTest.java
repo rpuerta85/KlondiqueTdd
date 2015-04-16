@@ -17,13 +17,11 @@ public class MoveFromWasteToTableauxControllerTest{
 	private MoveFromWasteToTableauxController moveFromWasteToTableauxController;
 	private StartGameController startGameController;
 	private Board board;
-	//private Foundation foundationDiamond = new Foundation(FoundationsType.DIAMOND, )
+	private static final int FOUNDATION_INDEX_TEST = 1;
 	
 	@Before
 	public void before() {
 		board = new Board();
-		//board.getUncoveredCardsStackTableaus().get(0).add(new Card(true, new F ., number));
-		
 		startGameController = new StartGameController(board);
 		startGameController.startGame();
 		board = startGameController.getBoard();
@@ -37,15 +35,14 @@ public class MoveFromWasteToTableauxControllerTest{
 		Card card = board.getDeckCardsStack().pop();
 		card.setUncovered(true);
 		card.setNumber(new Integer("12"));
-		board.getUncoveredCardsStackTableaus().get(1).peek().setNumber(13);
+		board.getUncoveredCardsStackTableaus().get(FOUNDATION_INDEX_TEST).peek().setNumber(Board.NUM_CARDS_FOR_FOUNDATION);
 		board.getWaste().push(card);
 			
 		
 		
 		try {
-			assertTrue(moveFromWasteToTableauxController.moveFromWasteToTableaux(1));
+			assertTrue(moveFromWasteToTableauxController.moveFromWasteToTableaux(FOUNDATION_INDEX_TEST));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

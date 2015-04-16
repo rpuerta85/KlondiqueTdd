@@ -40,7 +40,7 @@ public class MoveFromWasteToFoundationControllerTest{
 			board.getSizeFoundations().get(foundationindex).clear();
 			board.getWaste().push(new Card(false, new Foundation(FoundationsType.DIAMOND), 2));
 			assertFalse(moveFromWasteToFoundationController.moveFromWasteToFoundation(foundationindex));
-
+		
 			board.getWaste().clear();
 			board.getSizeFoundations().get(foundationindex).clear();
 			board.getWaste().push(new Card(false, new Foundation(FoundationsType.DIAMOND), 13));
@@ -68,6 +68,7 @@ public class MoveFromWasteToFoundationControllerTest{
 		int foundationindex = 0;
 		boolean ok = moveFromWasteToFoundationController.isMoveFromWasteToFoundationMovementOK(foundationindex);
 		assertFalse(ok);
+		
 		board.getWaste().push(card);
 		ok = moveFromWasteToFoundationController.isMoveFromWasteToFoundationMovementOK(foundationindex);
 		assertTrue(ok);		

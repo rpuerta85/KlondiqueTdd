@@ -14,16 +14,11 @@ public class MoveFromWasteToTableauxController extends KlondiqueController {
 	public boolean moveFromWasteToTableaux(int uncoveredCardsStackTableausIndex) throws Exception {
 		Stack<Card> uncoveredCardsStackTableau = board.getUncoveredCardsStackTableaus().get(uncoveredCardsStackTableausIndex);
 		boolean ok = false;
-		 if(board.getWaste().size()!=0 ){
-			 if(board.getWaste().size()!=0) {
+		 if(!board.getWaste().empty() ){
+			 if(!board.getWaste().empty()) {
 			 Card card = board.getWaste().peek();
-			 
-			 System.out.println(uncoveredCardsStackTableau.peek().getNumber().intValue()+":"+((card.getNumber().intValue())+1
-					 ));
-			 System.out.println(uncoveredCardsStackTableau.peek().getFoundation().getColor().ordinal()+":"+card.getFoundation().getColor().ordinal());
-
 			 ok =
-					 (uncoveredCardsStackTableau.size()==0 && card.getNumber().intValue()==13 ) || 
+					 (uncoveredCardsStackTableau.empty() && card.getNumber().intValue()==Board.NUM_CARDS_FOR_FOUNDATION ) || 
 						(uncoveredCardsStackTableau.peek().getNumber().intValue()==card.getNumber().intValue()+1 && 
 								uncoveredCardsStackTableau.peek().getFoundation().getColor()!=card.getFoundation().getColor());
 			 }else {

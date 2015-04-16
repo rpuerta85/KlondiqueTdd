@@ -34,7 +34,7 @@ public class MoveFromDeckToWasteControllerTest{
 			assertEquals(oldWasteSize+1, board.getWaste().size());
 			assertEquals(oldDeckSize-1, board.getDeck().size());
 		}catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 	@Test(expected = java.lang.Exception.class) 
