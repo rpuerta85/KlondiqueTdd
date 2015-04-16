@@ -31,6 +31,7 @@ public class MoveFromWasteToTableauxControllerTest{
 
 	}
 	
+	
 	@Test
 	public void moveFromWasteToTableauxTest() {
 		Card card = board.getDeckCardsStack().pop();
