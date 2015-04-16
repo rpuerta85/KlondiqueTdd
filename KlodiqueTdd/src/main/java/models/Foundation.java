@@ -7,10 +7,21 @@ public class Foundation {
 	
 	
 	
-	public Foundation(FoundationsType foundation, ColorType color) {
+	public Foundation(FoundationsType foundation) {
 		super();
 		this.foundation = foundation;
-		this.color = color;
+		
+		switch (foundation){
+			case HEART: case DIAMOND:{
+				this.color = ColorType.RED;
+				break;
+			}
+			case CLOVER: case SPADES:{
+				this.color = ColorType.BLACK;
+				break;
+			}
+		}
+		
 	}
 	public FoundationsType getFoundation() {
 		return foundation;

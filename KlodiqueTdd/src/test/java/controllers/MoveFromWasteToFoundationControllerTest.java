@@ -2,6 +2,8 @@ package controllers;
 
 import static org.junit.Assert.*;
 
+import java.util.Stack;
+
 import models.Board;
 import models.Card;
 
@@ -17,21 +19,21 @@ public class MoveFromWasteToFoundationControllerTest{
 	private StartGameController startGameController;
 	private Board board;
 	
-	
+	private Stack<Card> foundation = new Stack<Card>();
 	@Before
 	public void before() {
 		board = new Board();
+		
+		
 		startGameController = new StartGameController(board);
 		startGameController.startGame();
 		board = startGameController.getBoard();
 		moveFromWasteToFoundationController = new MoveFromWasteToFoundationController(board);
-		
-		
 	}
 	
 	@Test
 	public void moveFromDeckToFoundationControllerTest() {
-		Card card = board.getDeck().pop();
+		Card card = board.getDeckCardsStack().pop();
 		card.setUncovered(true);
 		board.getWaste().push(card);
 		card.setNumber(1);
@@ -60,15 +62,12 @@ public class MoveFromWasteToFoundationControllerTest{
 		boolean ok = moveFromWasteToFoundationController.isMoveFromWasteToFoundationMovementOK(foundationindex);
 		assertFalse(ok);
 		
-		Card card = board.getDeck().pop();
+		Card card = board.getDeckCardsStack().pop();
 		card.setNumber(1);
 		card.setUncovered(true);
 		board.getWaste().push(card);
 		
 		ok = moveFromWasteToFoundationController.isMoveFromWasteToFoundationMovementOK(foundationindex);
-		assertTrue(ok);
-
-
-		
+		assertTrue(ok);		
 	}
 }

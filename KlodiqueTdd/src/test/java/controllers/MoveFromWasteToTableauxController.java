@@ -17,6 +17,11 @@ public class MoveFromWasteToTableauxController extends KlondiqueController {
 		 if(board.getWaste().size()!=0 ){
 			 if(board.getWaste().size()!=0) {
 			 Card card = board.getWaste().peek();
+			 
+			 System.out.println(uncoveredCardsStackTableau.peek().getNumber().intValue()+":"+((card.getNumber().intValue())+1
+					 ));
+			 System.out.println(uncoveredCardsStackTableau.peek().getFoundation().getColor().ordinal()+":"+card.getFoundation().getColor().ordinal());
+
 			 ok =
 					 (uncoveredCardsStackTableau.size()==0 && card.getNumber().intValue()==13 ) || 
 						(uncoveredCardsStackTableau.peek().getNumber().intValue()==card.getNumber().intValue()+1 && 
@@ -26,7 +31,7 @@ public class MoveFromWasteToTableauxController extends KlondiqueController {
 			 	}
 			 }
 		 else {
-			 throw new Exception("Incorrect movement");
+			 throw new Exception("There is not cards in waste");
 		 }
 		
 		return ok;		

@@ -19,10 +19,10 @@ public class Board {
 	
 	private Stack<Card> deck = new Stack<Card>();
 	
-	private Foundation[] listFoundations = {new Foundation(FoundationsType.DIAMOND, ColorType.RED),
-			new Foundation(FoundationsType.HEART, ColorType.RED),
-			new Foundation(FoundationsType.SPADES, ColorType.BLACK),
-			new Foundation(FoundationsType.CLOVER, ColorType.BLACK)
+	private Foundation[] listFoundations = {new Foundation(FoundationsType.DIAMOND),
+			new Foundation(FoundationsType.HEART),
+			new Foundation(FoundationsType.SPADES),
+			new Foundation(FoundationsType.CLOVER)
 	};
 	public void initBoard(){
 		initDeck();
@@ -61,7 +61,7 @@ public class Board {
 
 	public int initSizeDeck() {
 		for (int i = 0;i<Board.NUM_CARDS_IN_DECK;i++){
-			Card c = deck.peek();
+			Card c = deck.pop();
 			c.setUncovered(false);
 			deckCardsStack.add(c);
 		}
@@ -72,7 +72,7 @@ public class Board {
 		for (int i = 0;i<Board.STACKS_OF_COVERED__UNCOVERED_CARDS;i++){
 			coveredCardsStackTableaus.add(new Stack<Card>());
 			for(int j =0;j<i;j++){
-				coveredCardsStackTableaus.get(i).push(deck.peek());
+				coveredCardsStackTableaus.get(i).push(deck.pop());
 			}
 		}
 		return coveredCardsStackTableaus;
@@ -81,7 +81,7 @@ public class Board {
 	public ArrayList<Stack<Card>> initUncoveredCardsStackTableaus() {
 		for (int i = 0;i<Board.STACKS_OF_COVERED__UNCOVERED_CARDS;i++){
 			uncoveredCardsStackTableaus.add(new Stack<Card>());
-			Card c = deck.peek();
+			Card c = deck.pop();
 			c.setUncovered(true);
 			uncoveredCardsStackTableaus.get(i).push(c);
 		}

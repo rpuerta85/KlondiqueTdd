@@ -11,6 +11,13 @@ public class Card {
 		this.uncovered = uncovered;
 	}
 	
+	public Card(boolean uncovered, Foundation foundation, Integer number) {
+		super();
+		this.uncovered = uncovered;
+		this.foundation = foundation;
+		this.number = number;
+	}
+
 	public boolean isUncovered() {
 		return uncovered;
 	}
