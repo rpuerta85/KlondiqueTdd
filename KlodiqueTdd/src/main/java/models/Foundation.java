@@ -1,7 +1,7 @@
 package models;
 
 public class Foundation {
-	private FoundationsType foundation;
+	private FoundationsType foundationType;
 	private ColorType color;
 	
 	
@@ -9,7 +9,7 @@ public class Foundation {
 	
 	public Foundation(FoundationsType foundation) {
 		super();
-		this.foundation = foundation;
+		this.foundationType = foundation;
 		
 		switch (foundation){
 			case HEART: case DIAMOND:{
@@ -23,11 +23,11 @@ public class Foundation {
 		}
 		
 	}
-	public FoundationsType getFoundation() {
-		return foundation;
+	public FoundationsType getFoundationType() {
+		return foundationType;
 	}
-	public void setFoundation(FoundationsType foundation) {
-		this.foundation = foundation;
+	public void setFoundationType(FoundationsType foundationType) {
+		this.foundationType = foundationType;
 	}
 	public ColorType getColor() {
 		return color;

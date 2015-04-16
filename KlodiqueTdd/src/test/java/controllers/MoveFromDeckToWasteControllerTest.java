@@ -4,8 +4,6 @@ package controllers;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import models.Board;
-import models.Card;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,7 +15,6 @@ public class MoveFromDeckToWasteControllerTest{
 	private MoveFromDeckToWasteController moveFromDeckToWasteController;
 	private StartGameController startGameController;
 	private Board board;
-	
 	
 	@Before
 	public void before() {
@@ -33,9 +30,9 @@ public class MoveFromDeckToWasteControllerTest{
 		int oldWasteSize = board.getWaste().size();
 		int oldDeckSize = board.getDeck().size();
 		try{
-		assertTrue(moveFromDeckToWasteController.moveFromDeckToWaste());
-		assertEquals(oldWasteSize+1, board.getWaste().size());
-		assertEquals(oldDeckSize-1, board.getDeck().size());
+			assertTrue(moveFromDeckToWasteController.moveFromDeckToWaste());
+			assertEquals(oldWasteSize+1, board.getWaste().size());
+			assertEquals(oldDeckSize-1, board.getDeck().size());
 		}catch (Exception e) {
 			e.printStackTrace();
 		}

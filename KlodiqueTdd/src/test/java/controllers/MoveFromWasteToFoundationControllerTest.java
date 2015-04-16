@@ -6,67 +6,69 @@ import java.util.Stack;
 
 import models.Board;
 import models.Card;
-
+import models.Foundation;
+import models.FoundationsType;
 import org.junit.Before;
 import org.junit.Test;
-
-import controllers.StartGameController;
-
 
 public class MoveFromWasteToFoundationControllerTest{
 
 	private MoveFromWasteToFoundationController moveFromWasteToFoundationController;
-	private StartGameController startGameController;
 	private Board board;
+	private Card card;
 	
-	private Stack<Card> foundation = new Stack<Card>();
 	@Before
 	public void before() {
 		board = new Board();
-		
-		
-		startGameController = new StartGameController(board);
-		startGameController.startGame();
-		board = startGameController.getBoard();
+		board.initSizeFoundation();
+		card = new Card(false, new Foundation(FoundationsType.DIAMOND), 1);
 		moveFromWasteToFoundationController = new MoveFromWasteToFoundationController(board);
 	}
 	
 	@Test
 	public void moveFromDeckToFoundationControllerTest() {
-		Card card = board.getDeckCardsStack().pop();
-		card.setUncovered(true);
 		board.getWaste().push(card);
-		card.setNumber(1);
 		int foundationindex = 0;
 		int oldWasteSize = board.getWaste().size();
 		int oldFoundationSize = board.getSizeFoundations().get(foundationindex).size();
-		
 		try {
-			moveFromWasteToFoundationController.moveFromWasteToFoundation(foundationindex);
+			assertTrue(moveFromWasteToFoundationController.moveFromWasteToFoundation(foundationindex));
+			assertEquals(oldWasteSize-1, board.getWaste().size());
+			assertEquals(oldFoundationSize+1, board.getSizeFoundations().get(foundationindex).size());
+		
+			board.getWaste().clear();
+			board.getSizeFoundations().get(foundationindex).clear();
+			board.getWaste().push(new Card(false, new Foundation(FoundationsType.DIAMOND), 2));
+			assertFalse(moveFromWasteToFoundationController.moveFromWasteToFoundation(foundationindex));
+
+			board.getWaste().clear();
+			board.getSizeFoundations().get(foundationindex).clear();
+			board.getWaste().push(new Card(false, new Foundation(FoundationsType.DIAMOND), 13));
+			assertFalse(moveFromWasteToFoundationController.moveFromWasteToFoundation(foundationindex));
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		assertEquals(oldWasteSize-1, board.getWaste().size());
-		assertEquals(oldFoundationSize+1, board.getSizeFoundations().get(foundationindex).size());
+		
+		
+		
+		
+
+		
 	}
 	
-	@Test(expected = java.lang.Exception.class) 
+	/*@Test(expected = java.lang.Exception.class) 
 	public void moveFromDeckToFoundationControllerExceptionTest() throws Exception {
 		int foundationindex = 0;
 		moveFromWasteToFoundationController.moveFromWasteToFoundation(foundationindex);
-	}
+	}*/
 
 	@Test
 	public void isMoveFromWasteToFoundationMovementOKTest() {
 		int foundationindex = 0;
 		boolean ok = moveFromWasteToFoundationController.isMoveFromWasteToFoundationMovementOK(foundationindex);
 		assertFalse(ok);
-		
-		Card card = board.getDeckCardsStack().pop();
-		card.setNumber(1);
-		card.setUncovered(true);
 		board.getWaste().push(card);
-		
 		ok = moveFromWasteToFoundationController.isMoveFromWasteToFoundationMovementOK(foundationindex);
 		assertTrue(ok);		
 	}

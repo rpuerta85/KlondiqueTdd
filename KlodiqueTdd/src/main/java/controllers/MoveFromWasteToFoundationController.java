@@ -12,15 +12,14 @@ public class MoveFromWasteToFoundationController extends KlondiqueController {
 	}
 
 	
-	public void moveFromWasteToFoundation(int foundationIndex ) throws Exception {
+	public boolean moveFromWasteToFoundation(int foundationIndex ) {
 		Stack<Card> foundation = board.getSizeFoundations().get(foundationIndex);
 		boolean ok = isMoveFromWasteToFoundationMovementOK(foundationIndex);
 		if(ok){
 				Card card = board.getWaste().pop();
 				foundation.push(card);
-		}else {
-			throw new Exception("Incorrect movement");
 		}
+		return ok;
 	}
 	
 	
@@ -28,16 +27,11 @@ public class MoveFromWasteToFoundationController extends KlondiqueController {
 		 boolean ok = false;
 		 if(board.getWaste().size()!=0){
 			 Card card = board.getWaste().peek();
-			 Stack<Card> foundation = board.getSizeFoundations().get(foundationIndex);
-			 
-				 
-			
-			 
+			 Stack<Card> foundation = board.getSizeFoundations().get(foundationIndex);			
 			 ok = 
 						(foundation.size()==0 && card.getNumber().intValue()==1) || 
-						(foundation.peek().getNumber().intValue()==card.getNumber().intValue()-1 && 
-						 foundation.peek().getFoundation().getFoundation()==card.getFoundation().getFoundation());
-			 
+						(foundation.size()!=0 && foundation.peek().getNumber().intValue()==card.getNumber().intValue()-1 && 
+						 foundation.peek().getFoundation().getFoundationType()==card.getFoundation().getFoundationType());
 		 }
 		 return ok;
 	

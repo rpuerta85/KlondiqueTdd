@@ -24,12 +24,6 @@ public class MoveFromWasteToTableauxControllerTest{
 		board = new Board();
 		//board.getUncoveredCardsStackTableaus().get(0).add(new Card(true, new F ., number));
 		
-		
-		
-		
-		
-		
-		
 		startGameController = new StartGameController(board);
 		startGameController.startGame();
 		board = startGameController.getBoard();
