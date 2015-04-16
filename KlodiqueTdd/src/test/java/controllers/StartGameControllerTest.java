@@ -24,7 +24,8 @@ public class StartGameControllerTest{
 	@Test
 	public void startGameTest() {
 		startGameController.startGame();
-		assertEquals(Board.NUM_CARDS,startGameController.getBoard().getDeck().size());
+		assertEquals(0,startGameController.getBoard().getDeck().size());
+		assertEquals(Board.NUM_CARDS_IN_DECK,startGameController.getBoard().getDeckCardsStack().size());
 	}
 	
 	
